@@ -2,4 +2,6 @@
     <string name="app_name">GuestList</string>
     <string name="btn_guest_list_add">Add Guest</string>
     <string name="btn_guest_list_clear">Delete All Guests</string>
+    <string name="tv_relation_label">Relation</string>
+    <string name="et_name_hint">Guest Name</string>
 </resources>
