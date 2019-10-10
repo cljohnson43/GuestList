@@ -1,7 +1,8 @@
-package com.example.guestlist
+package com.example.guestlist.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.guestlist.R
 
 class GuestListActivity : AppCompatActivity() {
 
