@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GuestList</string>
     <string name="btn_guest_list_add">Add Guest</string>
+    <string name="btn_guest_list_clear">Delete All Guests</string>
 </resources>

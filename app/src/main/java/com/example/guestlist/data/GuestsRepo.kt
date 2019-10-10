@@ -15,5 +15,5 @@ class GuestsRepo(context: Context) {
 
     fun allGuests(): List<Guest> = db.guestDAO().loadAllGuests() as List<Guest>
     fun insertGuest(guest: Guest): Long = db.guestDAO().insertGuest(guest)
-    fun deleteGuest(guest: Guest): Int = db.guestDAO().deleteGuest(guest)
+    fun deleteGuests(vararg guest: Guest): Int = db.guestDAO().deleteGuests(*guest)
 }

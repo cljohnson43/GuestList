@@ -29,6 +29,7 @@ class GuestListActivity : AppCompatActivity() {
     fun onClick(view: View) {
         when(view.id) {
             R.id.btn_add_guest -> guestsViewModel.insertGuest(Guest(name = "Steve Johnson", relation = "Family"))
+            R.id.btn_delete_guests -> guestsViewModel.deleteGuests(*guestsViewModel.getGuests().toTypedArray())
         }
     }
 }

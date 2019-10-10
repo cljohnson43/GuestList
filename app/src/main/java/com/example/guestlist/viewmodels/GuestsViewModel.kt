@@ -43,4 +43,6 @@ class GuestsViewModel(application: Application) : AndroidViewModel(application) 
             }
         }
     }
+
+    fun deleteGuests(vararg guests: Guest): Int = guestsRepo.deleteGuests(*guests)
 }

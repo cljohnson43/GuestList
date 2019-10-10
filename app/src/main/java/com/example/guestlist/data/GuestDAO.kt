@@ -9,7 +9,7 @@ interface GuestDAO {
     fun insertGuest(guest: Guest): Long
 
     @Delete
-    fun deleteGuest(guest: Guest): Int
+    fun deleteGuests(vararg guest: Guest): Int
 
     @Query("SELECT * FROM ${Guest.TABLE_NAME}")
     fun loadAllGuests(): List<Guest>
