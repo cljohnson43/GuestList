@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#042AEB</color>
     <color name="colorAccent">#D81B60</color>
     <color name="snow_white">#F9F9F9</color>
+    <color name="dark">#090909</color>
 </resources>
