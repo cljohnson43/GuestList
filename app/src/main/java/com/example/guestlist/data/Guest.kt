@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = Guest.TABLE_NAME)
 class Guest private constructor(
-    @PrimaryKey var id: Int?,
+    @PrimaryKey var id: Long?,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "relatiion") val relation: String
 ) {
@@ -15,5 +15,9 @@ class Guest private constructor(
 
     companion object {
         const val TABLE_NAME = "guests"
+    }
+
+    override fun toString(): String {
+        return "Name - $name Relation - $relation ID - ${id ?: "null"}"
     }
 }

@@ -9,10 +9,11 @@ class GuestsRepo(context: Context) {
             context,
             GuestsDB::class.java,
             GuestsDB.DB_NAME
-        ).build()
+        )
+            .allowMainThreadQueries().build()
     }
 
     fun allGuests(): List<Guest> = db.guestDAO().loadAllGuests() as List<Guest>
-    fun insertGuests(vararg guest: Guest): List<Long> = db.guestDAO().insertGuests()
-    fun deleteGuests(vararg guest: Guest): Int = db.guestDAO().deleteGuests()
+    fun insertGuest(guest: Guest): Long = db.guestDAO().insertGuest(guest)
+    fun deleteGuest(guest: Guest): Int = db.guestDAO().deleteGuest(guest)
 }

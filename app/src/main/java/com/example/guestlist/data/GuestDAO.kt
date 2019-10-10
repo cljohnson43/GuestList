@@ -4,12 +4,13 @@ import androidx.room.*
 
 @Dao
 interface GuestDAO {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertGuests(vararg guest: Guest): List<Long>
+    // TODO look into defining what constitutes a conflict
+    @Insert(onConflict = OnConflictStrategy.ABORT)
+    fun insertGuest(guest: Guest): Long
 
     @Delete
-    fun deleteGuests(vararg guest: Guest): Int
+    fun deleteGuest(guest: Guest): Int
 
     @Query("SELECT * FROM ${Guest.TABLE_NAME}")
-    fun loadAllGuests(): Array<Guest>
+    fun loadAllGuests(): List<Guest>
 }
