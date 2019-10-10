@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "guests")
+@Entity(tableName = Guest.TABLE_NAME)
 class Guest private constructor(
     @PrimaryKey var id: Int?,
     @ColumnInfo(name = "name") val name: String,
@@ -12,4 +12,8 @@ class Guest private constructor(
 ) {
     constructor(name: String, relation: String) :
             this(id = null, name = name, relation = relation)
+
+    companion object {
+        const val TABLE_NAME = "guests"
+    }
 }
