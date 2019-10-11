@@ -24,9 +24,9 @@ class GuestListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guest_list)
 
-        val guestList = guestsViewModel.getGuests()
-
-        rv_guest_list.adapter = GuestsAdapter(guestList)
+        val adapter = GuestsAdapter()
+        rv_guest_list.adapter = adapter
+        subscribeUi(adapter)
         rv_guest_list.layoutManager = LinearLayoutManager(this)
     }
 
@@ -39,8 +39,13 @@ class GuestListActivity : AppCompatActivity() {
                 )
                 guestsViewModel.insertGuest(guest)
                 et_name.text.clear()
-                rv_guest_list.adapter?.notifyDataSetChanged()
             }
         }
+    }
+
+    private fun subscribeUi(adapter: GuestsAdapter) {
+        guestsViewModel.getGuests().observe(this, Observer { guests ->
+            adapter.submitList(guests)
+        })
     }
 }

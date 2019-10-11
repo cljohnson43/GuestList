@@ -1,5 +1,6 @@
 package com.example.guestlist.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
@@ -12,5 +13,5 @@ interface GuestDAO {
     fun deleteGuests(vararg guest: Guest): Int
 
     @Query("SELECT * FROM ${Guest.TABLE_NAME}")
-    fun loadAllGuests(): List<Guest>
+    fun loadAllGuests(): LiveData<List<Guest>>
 }
